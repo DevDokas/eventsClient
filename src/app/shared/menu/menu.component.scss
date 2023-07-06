@@ -1,0 +1,25 @@
+$fontColor: #141414;
+$navBar: #e2c213;
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 10vh;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: $navBar;
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 7vw;
+    list-style-type: none;
+    width: fit-content;
+
+    li a{
+      color: $fontColor;
+      text-decoration: none;
+    }
+  }
+}
