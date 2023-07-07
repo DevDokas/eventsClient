@@ -7,18 +7,22 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+import { EventDetailPageComponent } from './pages/event-detail-page/event-detail-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     MainPageComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    EventDetailPageComponent,
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

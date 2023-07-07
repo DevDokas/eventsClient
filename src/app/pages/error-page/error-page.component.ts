@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-error-page',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ErrorPageComponent implements OnInit {
 
-  constructor() { }
+  public timer = 5;
+
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
+    // TODO: CORRIGIR BUG DO CONTADOR QUE SÓ RODA 1 LOOP
+
+    setTimeout(() => {
+      this.router.navigate(['main'])
+    }, 5000)
   }
 
 }

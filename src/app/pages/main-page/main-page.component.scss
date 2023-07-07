@@ -1,0 +1,30 @@
+main {
+  padding: 5vh;
+
+  ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 3vh;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      height: 30vh;
+      border: 1px solid #141414;
+      border-radius: 1vh;
+      list-style: none;
+      overflow: hidden;
+
+      div {
+        height: 13vh;
+        padding: 1vh;
+      }
+
+      img {
+        height: 15vh;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 // Pages
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { EventDetailPageComponent } from './pages/event-detail-page/event-detail-page.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 const routes: Routes = [
@@ -14,10 +15,18 @@ const routes: Routes = [
   },
   {
     path: "main",
-    component: MainPageComponent
+    component: MainPageComponent,
+  },
+  {
+    path: "main/:id",
+    component: EventDetailPageComponent
   },
   {
     path: "**",
+    component: ErrorPageComponent
+  },
+  {
+    path: "main/**",
     component: ErrorPageComponent
   }
 ];

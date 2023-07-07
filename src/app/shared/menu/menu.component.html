@@ -1,11 +1,13 @@
 <header>
   <nav>
+    <img [src]="icon" alt="">
     <ul>
       <li>
-        <a routerLink=""> Principal </a>
+        <a routerLink="" [routerLinkActive]="['activated']" [routerLinkActiveOptions]="{exact:
+          true}"> Principal </a>
       </li>
       <li>
-        <a href="/main"> Eventos </a>
+        <a routerLink="/main" [routerLinkActive]="['activated']"> Eventos </a>
       </li>
     </ul>
   </nav>

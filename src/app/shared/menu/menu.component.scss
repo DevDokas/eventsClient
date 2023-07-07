@@ -1,25 +1,50 @@
 $fontColor: #141414;
+$fontColorActivated: #e2e2e2;
 $navBar: #e2c213;
 
 header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   height: 10vh;
   width: 100%;
+  padding: 0 10vw 0 10vw;
   overflow-x: hidden;
   background-color: $navBar;
 
-  nav ul {
+  nav {
     display: flex;
     flex-direction: row;
-    gap: 7vw;
-    list-style-type: none;
-    width: fit-content;
+    align-items: center;
+    gap: 5vw;
 
-    li a{
-      color: $fontColor;
-      text-decoration: none;
+    img {
+      height: 7vh;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      gap: 3vw;
+      list-style-type: none;
+      width: fit-content;
+
+      li {
+
+        a{
+          color: $fontColor;
+          text-decoration: none;
+          font-size: 3vh;
+        }
+
+        .activated {
+          color: $fontColorActivated;
+        }
+      }
     }
   }
+
 }
