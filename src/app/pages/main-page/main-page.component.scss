@@ -13,8 +13,10 @@ main {
       height: 30vh;
       border: 1px solid #141414;
       border-radius: 1vh;
+      background-color: #eeeeee;
       list-style: none;
       overflow: hidden;
+      cursor: pointer;
 
       div {
         height: 13vh;
