@@ -9,6 +9,10 @@ import { IEvent } from 'src/app/interface/i-event';
 })
 export class AdminComponent implements OnInit {
 
+  protected postModalActivated: boolean;
+  protected putModalActivated: boolean;
+  protected putModalId: number;
+
   protected inputNome: string = "";
   protected inputCategoria: string = "";
   protected inputDescricao: string = "";
@@ -17,7 +21,11 @@ export class AdminComponent implements OnInit {
 
   public fetchRes: IEvent | any = [];
 
-  constructor(private fetchApiService: FetchApiService) { }
+  constructor(private fetchApiService: FetchApiService) {
+    this.postModalActivated = false;
+    this.putModalActivated = false;
+    this.putModalId = 0;
+  }
 
   ngOnInit(): void {
     this.catchEventos()
@@ -30,6 +38,13 @@ export class AdminComponent implements OnInit {
     })
   }
 
+  public handleDeleteEvent(id: number) {
+    window.location.reload()
+    return this.fetchApiService.deleteEvent(id).subscribe(
+      (res) => {res}
+    )
+  }
+
   public handlePostEvent(
     nome: string,
     categoria: string,
@@ -40,5 +55,14 @@ export class AdminComponent implements OnInit {
     return this.fetchApiService.postEvent(nome, categoria, descricao, imagem).subscribe(
       (res) => {res}
     )
+  }
+
+  public postModal() {
+    this.postModalActivated = !this.postModalActivated
+  }
+
+  public putModal(id: number) {
+    this.putModalId = id
+    this.putModalActivated = !this.putModalActivated
   }
 }

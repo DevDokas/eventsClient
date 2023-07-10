@@ -14,7 +14,8 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { EventDetailPageComponent } from './pages/event-detail-page/event-detail-page.component';
 import { AdminComponent } from './pages/admin/admin.component';
 
-// Shared Components
+// Modules
+import { FontAwesome6Module } from './icon-modules/font-awesome6/font-awesome6.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -31,6 +32,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FontAwesome6Module,
     FormsModule
   ],
   providers: [],

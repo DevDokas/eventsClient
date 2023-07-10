@@ -19,6 +19,26 @@ export class FetchApiService{
     this.eventRoute = '/evento/'
   }
 
+  public putEvent(
+    id: number,
+    nome: string,
+    categoria: string,
+    descricao: string,
+    imagem: string,
+    ): Observable<IEvent> {
+      return this.http.put<IEvent>(`${this.baseUrl}${this.eventRoute}${id}`, {
+        nome: nome,
+        categoria: categoria,
+        descricao: descricao,
+        imagem: imagem,
+        atualizado_em: Date.now()
+      })
+    }
+
+  public deleteEvent(id: number): Observable<IEvent> {
+    return this.http.delete<IEvent>(`${this.baseUrl}${this.eventRoute}${id}`)
+  }
+
   public postEvent(
     nome: string,
     categoria: string,
@@ -30,7 +50,8 @@ export class FetchApiService{
       categoria: categoria,
       descricao: descricao,
       imagem: imagem,
-      criado_em: Date.now()
+      criado_em: Date.now(),
+      atualizado_em: Date.now()
     })
   }
 
