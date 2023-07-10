@@ -1,0 +1,33 @@
+<main>
+  <form #form="ngForm">
+    <div>
+      <label>
+        Nome:
+        <input name="inputNome" ngModel type="text" placeholder="Digite o nome do evento ...">
+      </label>
+      <label>
+        Categoria:
+        <input name="inputCategoria" ngModel type="text" placeholder="Digite a categoria do evento ...">
+      </label>
+      <label>
+        Descrição:
+        <input name="inputDescricao" ngModel type="text" placeholder="Digite a descrição do evento ...">
+      </label>
+      <label>
+        Imagem:
+        <input name="inputImagem" ngModel type="text" placeholder="Digite o nome do evento ...">
+      </label>
+    </div>
+    <button (click)="handlePostEvent(
+      form.value.inputNome,
+      form.value.inputCategoria,
+      form.value.inputDescricao,
+      form.value.inputImagem
+      )"> Enviar </button>
+  </form>
+  <div class="event-list">
+    <li *ngFor="let i of fetchRes">
+      <p>{{ i.nome }}</p>
+    </li>
+  </div>
+</main>

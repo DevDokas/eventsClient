@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchApiService } from 'src/app/services/fetch-api.service';
 import { Router } from '@angular/router';
+import { IEvent } from 'src/app/interface/i-event';
 
 @Component({
   selector: 'app-main-page',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class MainPageComponent implements OnInit {
 
-  public fetchRes: Array<string> | any = [];
+  public fetchRes: IEvent | any = [];
 
   constructor(private fetchApiService: FetchApiService, private router: Router) {
   }

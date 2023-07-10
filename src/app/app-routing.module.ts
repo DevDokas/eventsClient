@@ -6,7 +6,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { EventDetailPageComponent } from './pages/event-detail-page/event-detail-page.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
-
+import { AdminComponent } from './pages/admin/admin.component';
 const routes: Routes = [
   {
     path: "",
@@ -20,6 +20,10 @@ const routes: Routes = [
   {
     path: "main/:id",
     component: EventDetailPageComponent
+  },
+  {
+    path: "admin",
+    component: AdminComponent
   },
   {
     path: "**",
