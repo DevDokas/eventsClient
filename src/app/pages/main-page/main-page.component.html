@@ -1,10 +1,11 @@
 <main>
-  <button> Criar novo evento </button>
+  <div>
+    <button> Criar novo evento </button>
+  </div>
   <ul>
     <li *ngFor="let i of fetchRes" (click)="visitEventos(i.id)">
         <div class="eventContainer">
           <h2>{{ i.nome }}</h2>
-          <p>{{i.descricao}}</p>
         </div>
         <img [src]="i.imagem" alt="{{ i.descricao }}">
     </li>
