@@ -1,13 +1,26 @@
 <main>
-  <div>
-    <button> Criar novo evento </button>
-  </div>
-  <ul>
-    <li *ngFor="let i of fetchRes" (click)="visitEventos(i.id)">
-        <div class="eventContainer">
-          <h2>{{ i.nome }}</h2>
+  <section>
+    <ul>
+      <li *ngFor="let i of fetchRes" (click)="visitEventos(i.id)">
+        <div class="container-imagem">
+          <img [src]="i.imagem" alt="{{ i.descricao }}">
         </div>
-        <img [src]="i.imagem" alt="{{ i.descricao }}">
-    </li>
-  </ul>
+        <div class="container-infos-evento">
+          <h2>{{ i.nome }}</h2>
+          <p>{{ i.categoria }}</p>
+        </div>
+      </li>
+    </ul>
+    <aside>
+      <div class="publicidade">
+        <img src="https://i.promobit.com.br/631652713916889609181795725078_banner.jpg" alt="">
+      </div>
+      <div class="cupons">
+        <p>Cupons de desconto</p>
+      </div>
+      <div class="socialmedias">
+        <p>Redes Sociais</p>
+      </div>
+    </aside>
+  </section>
 </main>
