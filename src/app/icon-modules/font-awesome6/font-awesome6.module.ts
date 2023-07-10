@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faMagnifyingGlass, faUser, faTrash, faPen, faXmark } from '@fortawesome/free-solid-svg-icons';
+import {
+  faMagnifyingGlass,
+  faTrash,
+  faXmark,
+  faUser,
+  faPlus,
+  faPen,
+} from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -17,6 +24,6 @@ import { faMagnifyingGlass, faUser, faTrash, faPen, faXmark } from '@fortawesome
 })
 export class FontAwesome6Module {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faMagnifyingGlass, faUser, faTrash, faPen, faXmark)
+    library.addIcons(faMagnifyingGlass, faUser, faTrash, faPen, faXmark, faPlus)
   }
 }

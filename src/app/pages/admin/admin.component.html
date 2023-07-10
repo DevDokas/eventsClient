@@ -1,8 +1,10 @@
 <main>
-  <button (click)="postModal()"> Adicionar novo evento </button>
+  <button class="post-form-add-button" (click)="postModal()">
+    Adicionar novo evento <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+  </button>
   <div class="post-form-container" *ngIf="postModalActivated">
-    <form #form="ngForm">
-      <div class="close-button-container">
+    <form #formPost="ngForm">
+      <div class="close-button-form-post-container">
         <fa-icon class="close-button" [icon]="['fas', 'xmark']" (click)="postModal()"></fa-icon>
       </div>
       <div>
@@ -24,24 +26,49 @@
         </label>
       </div>
       <button (click)="handlePostEvent(
-        form.value.inputNome,
-        form.value.inputCategoria,
-        form.value.inputDescricao,
-        form.value.inputImagem
+        formPost.value.inputNome,
+        formPost.value.inputCategoria,
+        formPost.value.inputDescricao,
+        formPost.value.inputImagem
         )"> Enviar </button>
     </form>
   </div>
   <div class="event-list">
     <h2>Eventos existentes:</h2>
     <li *ngFor="let i of fetchRes">
-      <p>{{ i.nome }}</p>
-      <div>
-        <fa-icon [icon]="['fas', 'trash']" (click)="handleDeleteEvent(i.id)"></fa-icon>
-        <fa-icon [icon]="['fas', 'pen']" (click)="putModal(i.id)"></fa-icon>
+      <div class="event-info-container">
+        <p>{{ i.nome }}</p>
+        <div>
+          <fa-icon [icon]="['fas', 'trash']" (click)="handleDeleteEvent(i.id)"></fa-icon>
+          <fa-icon [icon]="['fas', 'pen']" (click)="putModal(i.id)"></fa-icon>
+        </div>
       </div>
       <div *ngIf="putModalActivated && putModalId === i.id" class="put-modal">
-        <p>Teste {{i.id}}</p>
-      </div>
+        <form #formPut="ngForm">
+          <div class="close-button-form-post-container">
+            <fa-icon class="close-button" [icon]="['fas', 'xmark']" (click)="putModal(i.id)"></fa-icon>
+          </div>
+          <div>
+            <label>
+              Nome:
+              <input name="inputNome" ngModel type="text" placeholder="Digite o nome do evento ...">
+            </label>
+            <label>
+              Categoria:
+              <input name="inputCategoria" ngModel type="text" placeholder="Digite a categoria do evento ...">
+            </label>
+            <label>
+              Descrição:
+              <input name="inputDescricao" ngModel type="text" placeholder="Digite a descrição do evento ...">
+            </label>
+            <label>
+              Imagem:
+              <input name="inputImagem" ngModel type="text" placeholder="Digite o nome do evento ...">
+            </label>
+          </div>
+          <button> Enviar </button>
+        </form>
+    </div>
     </li>
   </div>
 </main>
