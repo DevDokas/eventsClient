@@ -38,6 +38,25 @@ export class AdminComponent implements OnInit {
     })
   }
 
+  public handlePutEvent(
+    id: number,
+    nome: string,
+    categoria: string,
+    descricao: string,
+    imagem: string
+    ) {
+    window.location.reload()
+    return this.fetchApiService.putEvent(
+      id,
+      nome,
+      categoria,
+      descricao,
+      imagem
+      ).subscribe(
+        (res) => {res}
+      )
+  }
+
   public handleDeleteEvent(id: number) {
     window.location.reload()
     return this.fetchApiService.deleteEvent(id).subscribe(

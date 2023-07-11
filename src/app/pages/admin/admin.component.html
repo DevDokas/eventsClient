@@ -66,7 +66,13 @@
               <input name="inputImagem" ngModel type="text" placeholder="Digite o nome do evento ...">
             </label>
           </div>
-          <button> Enviar </button>
+          <button (click)="handlePutEvent(
+            i.id,
+            formPut.value.inputNome || i.nome,
+            formPut.value.inputCategoria || i.categoria,
+            formPut.value.inputDescricao || i.descricao,
+            formPut.value.inputImagem || i.imagem
+            )"> Enviar </button>
         </form>
     </div>
     </li>
