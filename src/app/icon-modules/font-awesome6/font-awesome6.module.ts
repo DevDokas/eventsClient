@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import {
+  faCircleChevronLeft,
   faMagnifyingGlass,
   faTrash,
   faXmark,
@@ -26,6 +27,7 @@ import {
 export class FontAwesome6Module {
   constructor(library: FaIconLibrary) {
     library.addIcons(
+      faCircleChevronLeft,
       faMagnifyingGlass,
       faTrash,
       faXmark,

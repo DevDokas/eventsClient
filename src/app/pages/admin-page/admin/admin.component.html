@@ -7,13 +7,13 @@
       Gerenciar categorias <fa-icon [icon]="['fas', 'gear']"></fa-icon>
     </a>
   </div>
-  <div class="post-form-container" *ngIf="postModalActivated">
+  <section class="post-form-container" *ngIf="postModalActivated">
     <form #formPost="ngForm">
       <div class="close-button-form-post-container">
         <fa-icon class="close-button" [icon]="['fas', 'xmark']" (click)="postModal()"></fa-icon>
       </div>
       <div>
-        <select name="evento_categoria" ngModel>
+        <select name="selectCategoria" ngModel>
           <option value="">Selecione uma categoria</option>
           <option *ngFor="let i of fetchCategoryRes" value="{{i.id}}">{{ i.nome }}</option>
         </select>
@@ -32,21 +32,36 @@
       </div>
       <button (click)="handlePostEvent(
         formPost.value.inputNome,
-        formPost.value.inputCategoria,
+        formPost.value.selectCategoria,
         formPost.value.inputDescricao,
         formPost.value.inputImagem
         )"> Enviar </button>
     </form>
-  </div>
-  <div class="event-list">
-    <h2>Eventos existentes:</h2>
+  </section>
+  <section class="event-list">
+    <h2>Eventos ativos:</h2>
     <li *ngFor="let i of fetchEventRes">
-      <div class="event-info-container">
-        <p>{{ i.nome }}</p>
-        <div>
-          <fa-icon [icon]="['fas', 'trash']" (click)="handleDeleteEvent(i.id)"></fa-icon>
-          <fa-icon [icon]="['fas', 'pen']" (click)="putModal(i.id)"></fa-icon>
+      <div class="event-info-container" *ngIf="!eventInfoModal">
+        <div class="event-info-main">
+          <h2 (click)="infoModal(i.id)">{{ i.nome }}</h2>
+          <div>
+            <fa-icon [icon]="['fas', 'trash']" (click)="handleDeleteEvent(i.id)"></fa-icon>
+            <fa-icon [icon]="['fas', 'pen']" (click)="putModal(i.id)"></fa-icon>
+          </div>
         </div>
+      </div>
+      <div class="event-info-container" *ngIf="eventInfoModal">
+        <div class="event-info-main">
+          <h2 (click)="infoModal(i.id)">{{ i.nome }}</h2>
+          <div>
+            <fa-icon [icon]="['fas', 'trash']" (click)="handleDeleteEvent(i.id)"></fa-icon>
+            <fa-icon [icon]="['fas', 'pen']" (click)="putModal(i.id)"></fa-icon>
+          </div>
+        </div>
+      </div>
+      <div class="event-info-container" *ngIf="eventInfoModal && eventInfoId === i.id">
+        <p>{{i.descricao}}</p>
+        <img src="{{i.imagem}}" alt="">
       </div>
       <div *ngIf="putModalActivated && putModalId === i.id" class="put-modal">
         <form #formPut="ngForm">
@@ -54,21 +69,21 @@
             <fa-icon class="close-button" [icon]="['fas', 'xmark']" (click)="putModal(i.id)"></fa-icon>
           </div>
           <div class="input-put-container">
+            <select name="selectCategoria" ngModel >
+              <option value="">Selecione uma categoria</option>
+              <option *ngFor="let i of fetchCategoryRes" value="{{i.id}}" selected>{{ i.nome }}</option>
+            </select>
             <label>
               Nome:
-              <input name="inputNome" ngModel type="text" placeholder="Digite o nome do evento ...">
-            </label>
-            <label>
-              Categoria:
-              <input name="inputCategoria" ngModel type="text" placeholder="Digite a categoria do evento ...">
+              <input name="inputNome" ngModel type="text" placeholder="{{i.nome}}">
             </label>
             <label>
               Descrição:
-              <input name="inputDescricao" ngModel type="text" placeholder="Digite a descrição do evento ...">
+              <input name="inputDescricao" ngModel type="text" placeholder="{{i.descricao}}">
             </label>
             <label>
               Imagem:
-              <input name="inputImagem" ngModel type="text" placeholder="Digite o nome do evento ...">
+              <input name="inputImagem" ngModel type="text" placeholder="{{i.imagem}}">
             </label>
           </div>
           <button
@@ -76,12 +91,12 @@
           (click)="handlePutEvent(
             i.id,
             formPut.value.inputNome || i.nome,
-            formPut.value.inputCategoria || i.categoria_id,
+            formPut.value.selectCategoria || i.categoria_id,
             formPut.value.inputDescricao || i.descricao,
             formPut.value.inputImagem || i.imagem
             )"> Enviar </button>
         </form>
     </div>
     </li>
-  </div>
+  </section>
 </main>

@@ -14,6 +14,9 @@ export class AdminComponent implements OnInit {
   protected putModalActivated: boolean;
   protected putModalId: number;
 
+  protected eventInfoModal: boolean;
+  protected eventInfoId: number;
+
   protected inputNome: string = "";
   protected inputCategoria: string = "";
   protected inputDescricao: string = "";
@@ -27,6 +30,9 @@ export class AdminComponent implements OnInit {
     this.postModalActivated = false;
     this.putModalActivated = false;
     this.putModalId = 0;
+
+    this.eventInfoModal = false;
+    this.eventInfoId = 0;
   }
 
   ngOnInit(): void {
@@ -88,6 +94,11 @@ export class AdminComponent implements OnInit {
     return this.fetchApiService.postEvent(nome, categoria_id, descricao, imagem).subscribe(
       (res) => {res}
     )
+  }
+
+  public infoModal(id: number) {
+    this.eventInfoId = id;
+    this.eventInfoModal = !this.eventInfoModal
   }
 
   public postModal() {
