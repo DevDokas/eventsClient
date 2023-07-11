@@ -135,7 +135,7 @@ main {
         .container-infos-evento {
           display: flex;
           flex-direction: column;
-          justify-content: end;
+          justify-content: flex-end;
           gap: 0.5vh;
           height: 7.5vh;
           padding: 1.5vh;
