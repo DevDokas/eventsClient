@@ -1,20 +1,25 @@
 <main>
-  <button class="post-form-add-button" (click)="postModal()">
-    Adicionar novo evento <fa-icon [icon]="['fas', 'plus']"></fa-icon>
-  </button>
+  <div class="general-button-container">
+    <button class="post-form-add-button" (click)="postModal()">
+      Adicionar novo evento <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+    </button>
+    <a class="category-edit-button" routerLink="categoria">
+      Gerenciar categorias <fa-icon [icon]="['fas', 'gear']"></fa-icon>
+    </a>
+  </div>
   <div class="post-form-container" *ngIf="postModalActivated">
     <form #formPost="ngForm">
       <div class="close-button-form-post-container">
         <fa-icon class="close-button" [icon]="['fas', 'xmark']" (click)="postModal()"></fa-icon>
       </div>
       <div>
+        <select name="evento_categoria" ngModel>
+          <option value="">Selecione uma categoria</option>
+          <option *ngFor="let i of fetchCategoryRes" value="{{i.id}}">{{ i.nome }}</option>
+        </select>
         <label>
           Nome:
           <input name="inputNome" ngModel type="text" placeholder="Digite o nome do evento ...">
-        </label>
-        <label>
-          Categoria:
-          <input name="inputCategoria" ngModel type="text" placeholder="Digite a categoria do evento ...">
         </label>
         <label>
           Descrição:
@@ -35,7 +40,7 @@
   </div>
   <div class="event-list">
     <h2>Eventos existentes:</h2>
-    <li *ngFor="let i of fetchRes">
+    <li *ngFor="let i of fetchEventRes">
       <div class="event-info-container">
         <p>{{ i.nome }}</p>
         <div>
@@ -45,10 +50,10 @@
       </div>
       <div *ngIf="putModalActivated && putModalId === i.id" class="put-modal">
         <form #formPut="ngForm">
-          <div class="close-button-form-post-container">
+          <div class="close-button-form-put-container">
             <fa-icon class="close-button" [icon]="['fas', 'xmark']" (click)="putModal(i.id)"></fa-icon>
           </div>
-          <div>
+          <div class="input-put-container">
             <label>
               Nome:
               <input name="inputNome" ngModel type="text" placeholder="Digite o nome do evento ...">
@@ -66,10 +71,12 @@
               <input name="inputImagem" ngModel type="text" placeholder="Digite o nome do evento ...">
             </label>
           </div>
-          <button (click)="handlePutEvent(
+          <button
+          class="close-button"
+          (click)="handlePutEvent(
             i.id,
             formPut.value.inputNome || i.nome,
-            formPut.value.inputCategoria || i.categoria,
+            formPut.value.inputCategoria || i.categoria_id,
             formPut.value.inputDescricao || i.descricao,
             formPut.value.inputImagem || i.imagem
             )"> Enviar </button>

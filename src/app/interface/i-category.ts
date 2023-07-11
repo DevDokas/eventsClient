@@ -1,6 +1,5 @@
-export interface IEvent {
+export interface ICategory {
   nome: string,
-  categoria_id: number,
   descricao: string,
   imagem: string,
   criado_em: string,

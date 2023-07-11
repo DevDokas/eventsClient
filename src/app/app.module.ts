@@ -12,11 +12,12 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { EventDetailPageComponent } from './pages/event-detail-page/event-detail-page.component';
-import { AdminComponent } from './pages/admin/admin.component';
+import { AdminComponent } from './pages/admin-page/admin/admin.component';
 
 // Modules
 import { FontAwesome6Module } from './icon-modules/font-awesome6/font-awesome6.module';
 import { SharedModule } from './shared/shared.module';
+import { CategoryPageComponent } from './pages/admin-page/category-page/category-page.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SharedModule } from './shared/shared.module';
     ErrorPageComponent,
     EventDetailPageComponent,
     AdminComponent,
+    CategoryPageComponent,
   ],
   imports: [
     SharedModule,

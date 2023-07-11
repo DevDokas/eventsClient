@@ -5,6 +5,7 @@ import {
   faMagnifyingGlass,
   faTrash,
   faXmark,
+  faGear,
   faUser,
   faPlus,
   faPen,
@@ -24,6 +25,14 @@ import {
 })
 export class FontAwesome6Module {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faMagnifyingGlass, faUser, faTrash, faPen, faXmark, faPlus)
+    library.addIcons(
+      faMagnifyingGlass,
+      faTrash,
+      faXmark,
+      faGear,
+      faUser,
+      faPlus,
+      faPen,
+      )
   }
 }

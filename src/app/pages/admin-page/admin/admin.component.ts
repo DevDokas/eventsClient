@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchApiService } from 'src/app/services/fetch-api.service';
 import { IEvent } from 'src/app/interface/i-event';
+import { ICategory } from 'src/app/interface/i-category';
 
 @Component({
   selector: 'app-admin',
@@ -19,7 +20,8 @@ export class AdminComponent implements OnInit {
   protected inputImagem: string = "";
   protected inputCriadoEm: string = "";
 
-  public fetchRes: IEvent | any = [];
+  public fetchEventRes: IEvent | any = [];
+  public fetchCategoryRes: ICategory | any = [];
 
   constructor(private fetchApiService: FetchApiService) {
     this.postModalActivated = false;
@@ -29,19 +31,31 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
     this.catchEventos()
+    this.catchCategorias()
   }
 
   public catchEventos() {
-    this.fetchApiService.getEvents().subscribe((res) => {
-      this.fetchRes = res
-      console.log(res)
-    })
+    this.fetchApiService.getEvents().subscribe(
+      (res) => {
+      this.fetchEventRes = res
+      console.log(this.fetchEventRes)
+      }
+    )
+  }
+
+  public catchCategorias() {
+    this.fetchApiService.getCategory().subscribe(
+      (res) => {
+        this.fetchCategoryRes = res
+        console.log(this.fetchCategoryRes)
+      }
+    )
   }
 
   public handlePutEvent(
     id: number,
     nome: string,
-    categoria: string,
+    categoria_id: number,
     descricao: string,
     imagem: string
     ) {
@@ -49,7 +63,7 @@ export class AdminComponent implements OnInit {
     return this.fetchApiService.putEvent(
       id,
       nome,
-      categoria,
+      categoria_id,
       descricao,
       imagem
       ).subscribe(
@@ -66,12 +80,12 @@ export class AdminComponent implements OnInit {
 
   public handlePostEvent(
     nome: string,
-    categoria: string,
+    categoria_id: number,
     descricao: string,
     imagem: string
     ) {
     window.location.reload()
-    return this.fetchApiService.postEvent(nome, categoria, descricao, imagem).subscribe(
+    return this.fetchApiService.postEvent(nome, categoria_id, descricao, imagem).subscribe(
       (res) => {res}
     )
   }
