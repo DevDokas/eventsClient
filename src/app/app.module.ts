@@ -19,8 +19,8 @@ import { FontAwesome6Module } from './icon-modules/font-awesome6/font-awesome6.m
 import { SharedModule } from './shared/shared.module';
 import { CategoryPageComponent } from './pages/admin-page/category-page/category-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule, Route } from '@angular/router';
-
+import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +39,8 @@ import { RouterModule, Route } from '@angular/router';
     HttpClientModule,
     FontAwesome6Module,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
