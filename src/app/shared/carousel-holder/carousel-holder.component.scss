@@ -1,3 +1,35 @@
-main {
-  margin: 0;
+/* main {
+
 }
+ */
+.main-slider {
+  overflow: hidden;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    width: 100vw;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+
+    .caption {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 50%;
+      bottom: 3vh;
+      transform: translate(-50%, 3vh);
+      height: 10vh;
+      width: 100%;
+      color: aliceblue;
+      background-color: rgba(0,0,0,0.3);
+    }
+  }
+}
+

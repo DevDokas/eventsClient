@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o'
 import { NgbCarouselModule, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { NgIf } from '@angular/common';
+import { NgIf, NgFor } from '@angular/common';
+import { FetchApiService } from 'src/app/services/fetch-api.service';
+import { ICategory } from 'src/app/interface/i-category';
 
 @Component({
   selector: 'app-carousel-holder',
   standalone: true,
   imports: [
     NgIf,
+    NgFor,
     NgbCarouselModule,
   ],
   providers: [NgbCarouselConfig],
@@ -16,42 +18,26 @@ import { NgIf } from '@angular/common';
 })
 export class CarouselHolderComponent implements OnInit {
 
-  images: Array<any> = [
-    {
-      id: 1,
-      src: "https://img.freepik.com/fotos-gratis/orador-aplaudindo-o-publico-apos-a-apresentacao-da-conferencia_107420-63802.jpg"
-    },
-    {
-      id: 1,
-      src: "https://img.freepik.com/fotos-gratis/orador-aplaudindo-o-publico-apos-a-apresentacao-da-conferencia_107420-63802.jpg"
-    },
-    {
-      id: 1,
-      src: "https://img.freepik.com/fotos-gratis/orador-aplaudindo-o-publico-apos-a-apresentacao-da-conferencia_107420-63802.jpg"
-    }
-  ]
+  public fetchCategoryRes: ICategory | any = [];
 
-  sliderWidth: number = window.innerWidth;
-
-  public customOptions: OwlOptions = {
-    loop: true,
-    autoplay: true,
-    autoplaySpeed: 700,
-    items: 1,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    dots: true,
-    navSpeed: 700,
-    navText: ['<', '>'],
-    nav: false
-  }
-
-  constructor(ngbCarouselConfig: NgbCarouselConfig) {
+  constructor(
+    private fetchApiService: FetchApiService,
+    public ngbCarouselConfig: NgbCarouselConfig
+    ) {
     ngbCarouselConfig.showNavigationIndicators = false
   }
 
   ngOnInit(): void {
+    this.catchCategorias()
+  }
+
+  public catchCategorias() {
+    this.fetchApiService.getCategory().subscribe(
+      (res) => {
+        this.fetchCategoryRes = res
+        console.log(this.fetchCategoryRes)
+      }
+    )
   }
 
 }

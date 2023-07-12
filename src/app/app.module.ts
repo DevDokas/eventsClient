@@ -20,6 +20,7 @@ import { SharedModule } from './shared/shared.module';
 import { CategoryPageComponent } from './pages/admin-page/category-page/category-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     FontAwesome6Module,
     BrowserAnimationsModule,
+    CarouselModule,
     FormsModule,
     NgbModule,
   ],

@@ -7,13 +7,16 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CarouselHolderComponent } from './carousel-holder/carousel-holder.component';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselCategoriesHolderComponent } from './carousel-categories-holder/carousel-categories-holder.component';
 @NgModule({
   declarations: [
     MenuComponent,
+    CarouselCategoriesHolderComponent,
   ],
   exports: [
     MenuComponent,
     CarouselHolderComponent,
+    CarouselCategoriesHolderComponent
   ],
   imports: [
     CarouselHolderComponent,
