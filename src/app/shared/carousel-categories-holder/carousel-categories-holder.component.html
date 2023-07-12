@@ -5,7 +5,7 @@
       <ng-container class="slider-container" *ngFor="let e of fetchEventsRes"  >
         <ng-template class="slider" *ngIf="c.nome === e.categoria.nome" carouselSlide [id]="e.id">
           <img class="slider-image" [src]="e.imagem" [alt]="e.descricao" [title]="e.nome">
-          <div class="slider-title">
+          <div class="slider-info">
             <h2>
               {{e.nome}}
             </h2>

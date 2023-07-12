@@ -43,7 +43,7 @@
     <li *ngFor="let i of fetchEventRes">
       <div class="event-info-container" *ngIf="!eventInfoModal">
         <div class="event-info-main">
-          <h2 (click)="infoModal(i.id)">{{ i.nome }}</h2>
+          <h2 (click)="infoModal(i.id)">{{i.id}} - {{ i.nome }}</h2>
           <div>
             <fa-icon [icon]="['fas', 'trash']" (click)="handleDeleteEvent(i.id)"></fa-icon>
             <fa-icon [icon]="['fas', 'pen']" (click)="putModal(i.id)"></fa-icon>

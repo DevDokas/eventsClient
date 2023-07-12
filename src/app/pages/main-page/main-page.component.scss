@@ -31,6 +31,9 @@ main {
       }
 
       .cupons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         position: relative;
         width: fit-content;
         padding: 5vh 1vh 1vh 1vh;
@@ -52,6 +55,8 @@ main {
         }
 
         ul {
+          margin: 0;
+          padding: 0;
           display: grid;
           grid-template-columns: 1fr 1fr 1fr;
           grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -136,18 +141,20 @@ main {
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
-          gap: 0.5vh;
-          height: 7.5vh;
+          gap: 1vh;
+          height: 12vh;
           padding: 1.5vh;
           overflow: hidden;
 
           h2 {
-            font-size: 2vh;
+            font-size: 1.75vh;
+            height: 5vh;
             width: 80%;
           }
 
           p{
             font-size: 1.5vh;
+            margin: 0;
           }
         }
 
