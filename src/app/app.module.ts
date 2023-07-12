@@ -18,6 +18,8 @@ import { AdminComponent } from './pages/admin-page/admin/admin.component';
 import { FontAwesome6Module } from './icon-modules/font-awesome6/font-awesome6.module';
 import { SharedModule } from './shared/shared.module';
 import { CategoryPageComponent } from './pages/admin-page/category-page/category-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule, Route } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -31,10 +33,12 @@ import { CategoryPageComponent } from './pages/admin-page/category-page/category
   ],
   imports: [
     SharedModule,
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesome6Module,
+    BrowserAnimationsModule,
     FormsModule
   ],
   providers: [],
