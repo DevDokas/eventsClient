@@ -9,15 +9,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselMainComponent } from './carousel-main/carousel-main.component';
 import { CarouselEventsByCategoriesComponent } from './carousel-events-by-categories/carousel-events-by-categories.component';
 import { CarouselCategoriesComponent } from './carousel-categories/carousel-categories.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     MenuComponent,
+    FooterComponent,
     CarouselCategoriesComponent,
     CarouselEventsByCategoriesComponent,
 
   ],
   exports: [
     MenuComponent,
+    FooterComponent,
     CarouselMainComponent,
     CarouselCategoriesComponent,
     CarouselEventsByCategoriesComponent,

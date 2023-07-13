@@ -1,0 +1,21 @@
+$fontColor: #141414;
+$fontColorActivated: #e2e2e2;
+$navBar: rgb(9, 31, 47);
+
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-top: 5vh;
+  height: 60vh;
+  background-color: $navBar;
+
+  h2 {
+    font-size: 2.5vh;
+    color: #f1f1f1;
+  }
+
+  h3 {
+    font-size: 2vh;
+    color: #141414;
+  }
+}
