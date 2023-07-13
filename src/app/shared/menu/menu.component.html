@@ -1,13 +1,15 @@
 <header>
   <nav>
-    <img [src]="icon" alt="">
+    <a routerLink="">
+      <img [src]="icon" alt="">
+    </a>
     <ul>
       <li>
         <a routerLink="" [routerLinkActive]="['activated']" [routerLinkActiveOptions]="{exact:
           true}"> Principal </a>
       </li>
       <li>
-        <a routerLink="/main" [routerLinkActive]="['activated']"> Eventos </a>
+        <a routerLink="/evento" [routerLinkActive]="['activated']"> Eventos </a>
       </li>
     </ul>
     <div class="search-container">

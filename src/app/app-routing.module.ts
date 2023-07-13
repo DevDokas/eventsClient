@@ -4,10 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 // Pages
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
-import { EventDetailPageComponent } from './pages/event-detail-page/event-detail-page.component';
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { EventDetailPageComponent } from './pages/event-detail-page/event-detail-page.component';
 import { CategoryPageComponent } from './pages/admin-page/category-page/category-page.component';
+import { CategoryDetailPageComponent } from './pages/category-detail-page/category-detail-page.component';
 import { AdminComponent } from './pages/admin-page/admin/admin.component';
+
 const routes: Routes = [
   {
     path: "",
@@ -16,13 +18,18 @@ const routes: Routes = [
     title: "+Eventos"
   },
   {
-    path: "main",
+    path: "evento",
     component: MainPageComponent,
     title: "Eventos"
   },
   {
-    path: "main/:id",
+    path: "evento/:id",
     component: EventDetailPageComponent
+  },
+  {
+    path: "categoria/:id",
+    component: CategoryDetailPageComponent,
+    title: "Categorias"
   },
   {
     path: "admin/evento",
@@ -36,10 +43,6 @@ const routes: Routes = [
   },
   {
     path: "**",
-    component: ErrorPageComponent
-  },
-  {
-    path: "main/**",
     component: ErrorPageComponent
   }
 ];

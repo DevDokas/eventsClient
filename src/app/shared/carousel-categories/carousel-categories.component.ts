@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./carousel-categories.component.scss']
 })
 export class CarouselCategoriesComponent implements OnInit {
+  public isDragging: boolean = false;
+
   public fetchCategoryRes: ICategory[] = [];
 
   public customOptions: OwlOptions = {
@@ -53,9 +55,5 @@ export class CarouselCategoriesComponent implements OnInit {
         console.log(this.fetchCategoryRes)
       }
     )
-  }
-
-  public visitEvent(id: string) {
-    this.router.navigate([`/main/${id}`])
   }
 }

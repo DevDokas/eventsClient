@@ -1,4 +1,8 @@
 $formBackground: #dbdbdb;
+$primaryFontColor: #f1f1f1;
+$primaryBackground:  rgb(40, 139, 228);
+$shadow005: rgba(0,0,0, 0.05);
+$shadow075: rgba(0,0,0, 0.75);
 
 main {
   display: flex;
@@ -31,7 +35,7 @@ main {
       cursor: pointer;
       transition: 0.1s;
       color: #f1f1f1;
-      background-color: #7A009D;
+      background-color: $primaryBackground;
 
       fa-icon {
         font-size: 3vh;
@@ -61,7 +65,7 @@ main {
       cursor: pointer;
       transition: 0.1s;
       color: #f1f1f1;
-      background-color: #7A009D;
+      background-color: $primaryBackground;
 
       fa-icon {
         font-size: 3vh;
@@ -163,7 +167,7 @@ main {
         cursor: pointer;
         transition: 0.1s;
         color: #f1f1f1;
-        background-color: #7A009D;
+        background-color: $primaryBackground;
 
         &:hover {
           -webkit-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
@@ -336,7 +340,7 @@ main {
         cursor: pointer;
         transition: 0.1s;
         color: #f1f1f1;
-        background-color: #7A009D;
+        background-color: $primaryBackground;
 
         &:hover {
           -webkit-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);

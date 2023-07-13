@@ -23,6 +23,7 @@ import { RouterModule } from '@angular/router';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CardComponent } from './components/card/card.component';
+import { CategoryDetailPageComponent } from './pages/category-detail-page/category-detail-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { CardComponent } from './components/card/card.component';
     AdminComponent,
     CategoryPageComponent,
     CardComponent,
+    CategoryDetailPageComponent,
   ],
   imports: [
     SharedModule,

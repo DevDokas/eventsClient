@@ -16,7 +16,7 @@ export class ErrorPageComponent implements OnInit {
     // TODO: CORRIGIR BUG DO CONTADOR QUE SÓ RODA 1 LOOP
 
     setTimeout(() => {
-      this.router.navigate(['main'])
+      this.router.navigate([''])
     }, 5000)
   }
 

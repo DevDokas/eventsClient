@@ -42,6 +42,6 @@ export class CarouselMainComponent implements OnInit {
   }
 
   public visitEvent(id: string) {
-    this.router.navigate([`/main/${id}`])
+    this.router.navigate([`/evento/${id}`])
   }
 }

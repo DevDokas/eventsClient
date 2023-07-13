@@ -27,6 +27,6 @@ export class MainPageComponent implements OnInit {
   }
 
   visitEventos(id: string) {
-    this.router.navigate([`/main/${id}`])
+    this.router.navigate([`/evento/${id}`])
   }
 }
