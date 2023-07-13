@@ -12,11 +12,13 @@ const routes: Routes = [
   {
     path: "",
     pathMatch: "full",
-    component: HomePageComponent
+    component: HomePageComponent,
+    title: "+Eventos"
   },
   {
     path: "main",
     component: MainPageComponent,
+    title: "Eventos"
   },
   {
     path: "main/:id",
@@ -24,11 +26,13 @@ const routes: Routes = [
   },
   {
     path: "admin/evento",
-    component: AdminComponent
+    component: AdminComponent,
+    title: "Painel Administrativo"
   },
   {
     path: "admin/evento/categoria",
-    component: CategoryPageComponent
+    component: CategoryPageComponent,
+    title: "Painel Administrativo"
   },
   {
     path: "**",
