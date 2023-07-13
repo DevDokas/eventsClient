@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o'
 import { FetchApiService } from 'src/app/services/fetch-api.service';
+import { IEventsByCategory } from 'src/app/interface/ievents-by-category';
 import { ICategory } from 'src/app/interface/i-category';
+import { IEvent } from 'src/app/interface/i-event';
+
 
 @Component({
   selector: 'app-carousel-categories-holder',
@@ -10,20 +13,20 @@ import { ICategory } from 'src/app/interface/i-category';
 })
 export class CarouselCategoriesHolderComponent implements OnInit {
 
-  public fetchCategoryRes: ICategory | any = [];
-  public fetchEventsRes: ICategory | any = [];
+  public fetchCategoryRes: ICategory[] = [];
+  public fetchEventsRes: IEvent[] = [];
+  public fetchEventsByCategoryRes: IEventsByCategory[] = [];
 
   sliderWidth: number = window.innerWidth;
   sliderHeight: number = window.innerHeight;
 
-  public customOptions: any = {
+  public customOptions: OwlOptions = {
       loop: true,
       mouseDrag: true,
       touchDrag: true,
       pullDrag: true,
       dots: false,
       nav: false,
-      navPosition: 'center',
       navSpeed: 700,
       navText: ['<', '>'],
       responsive: {
@@ -48,6 +51,7 @@ export class CarouselCategoriesHolderComponent implements OnInit {
   ngOnInit(): void {
     this.catchEventos()
     this.catchCategorias()
+    this.catchEventosByCategoria()
   }
 
   public catchEventos() {
@@ -64,6 +68,15 @@ export class CarouselCategoriesHolderComponent implements OnInit {
       (res) => {
         this.fetchCategoryRes = res
         console.log(this.fetchCategoryRes)
+      }
+    )
+  }
+
+  public catchEventosByCategoria() {
+    this.fetchApiService.getEventsByCategory().subscribe(
+      (res) => {
+        this.fetchEventsByCategoryRes = res
+        console.log(this.fetchEventsByCategoryRes)
       }
     )
   }

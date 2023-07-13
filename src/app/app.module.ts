@@ -15,13 +15,14 @@ import { EventDetailPageComponent } from './pages/event-detail-page/event-detail
 import { AdminComponent } from './pages/admin-page/admin/admin.component';
 
 // Modules
-import { FontAwesome6Module } from './icon-modules/font-awesome6/font-awesome6.module';
+import { FontAwesome6Module } from './components/font-awesome6/font-awesome6.module';
 import { SharedModule } from './shared/shared.module';
 import { CategoryPageComponent } from './pages/admin-page/category-page/category-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CardComponent } from './components/card/card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     EventDetailPageComponent,
     AdminComponent,
     CategoryPageComponent,
+    CardComponent,
   ],
   imports: [
     SharedModule,

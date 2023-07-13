@@ -14,12 +14,14 @@ export class FetchApiService{
 
   readonly eventRoute: string;
   readonly categoryRoute: string;
+  readonly eventsByCategoryRoute: string;
 
   private request: Object = [];
 
   constructor(private http: HttpClient) {
     this.eventRoute = '/evento/'
     this.categoryRoute = '/evento/categoria/'
+    this.eventsByCategoryRoute = '/evento/categoria/eventos/'
   }
 
   public deleteCategory(id: number): Observable<ICategory> {
@@ -92,6 +94,10 @@ export class FetchApiService{
       criado_em: Date.now(),
       atualizado_em: Date.now()
     })
+  }
+
+  public getEventsByCategory(): Observable<Array<any>> {
+    return this.http.get<Array<any>>(`${this.baseUrl}${this.eventsByCategoryRoute}`)
   }
 
   public getCategoryInfo(id: string): Observable<Array<ICategory>> {

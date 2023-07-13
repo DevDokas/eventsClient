@@ -5,7 +5,7 @@ import { FetchApiService } from 'src/app/services/fetch-api.service';
 import { ICategory } from 'src/app/interface/i-category';
 
 @Component({
-  selector: 'app-carousel-holder',
+  selector: 'app-carousel-main',
   standalone: true,
   imports: [
     NgIf,
@@ -13,11 +13,10 @@ import { ICategory } from 'src/app/interface/i-category';
     NgbCarouselModule,
   ],
   providers: [NgbCarouselConfig],
-  templateUrl: './carousel-holder.component.html',
-  styleUrls: ['./carousel-holder.component.scss']
+  templateUrl: './carousel-main.component.html',
+  styleUrls: ['./carousel-main.component.scss']
 })
-export class CarouselHolderComponent implements OnInit {
-
+export class CarouselMainComponent implements OnInit {
   public fetchCategoryRes: ICategory | any = [];
 
   constructor(
@@ -39,5 +38,4 @@ export class CarouselHolderComponent implements OnInit {
       }
     )
   }
-
 }
