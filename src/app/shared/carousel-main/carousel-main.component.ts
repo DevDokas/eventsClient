@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgbCarouselModule, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { NgIf, NgFor } from '@angular/common';
 import { FetchApiService } from 'src/app/services/fetch-api.service';
-import { ICategory } from 'src/app/interface/i-category';
+import { IEvent } from 'src/app/interface/i-event';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carousel-main',
@@ -17,25 +18,30 @@ import { ICategory } from 'src/app/interface/i-category';
   styleUrls: ['./carousel-main.component.scss']
 })
 export class CarouselMainComponent implements OnInit {
-  public fetchCategoryRes: ICategory | any = [];
+  public fetchEventsRes: IEvent[] = [];
 
   constructor(
+    private router: Router,
     private fetchApiService: FetchApiService,
-    public ngbCarouselConfig: NgbCarouselConfig
+    public ngbCarouselConfig: NgbCarouselConfig,
     ) {
     ngbCarouselConfig.showNavigationIndicators = false
   }
 
   ngOnInit(): void {
-    this.catchCategorias()
+    this.catchEventos()
   }
 
-  public catchCategorias() {
-    this.fetchApiService.getCategory().subscribe(
+  public catchEventos() {
+    this.fetchApiService.getEvents().subscribe(
       (res) => {
-        this.fetchCategoryRes = res
-        console.log(this.fetchCategoryRes)
+        this.fetchEventsRes = res
+        console.log(this.fetchEventsRes)
       }
     )
+  }
+
+  public visitEvent(id: string) {
+    this.router.navigate([`/main/${id}`])
   }
 }

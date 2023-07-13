@@ -1,0 +1,22 @@
+<section  *ngFor="let i of fetchEventsByCategoryRes">
+  <div class="carousel-category-container" *ngIf="i.eventos.length >= 4">
+    <h2 class="title">{{ i.categoria.nome }}</h2>
+    <owl-carousel-o [options]="customOptions" (dragging)="isDragging = $event.dragging">
+      <ng-container class="slider-container" *ngFor="let e of i.eventos"  >
+        <ng-template class="slider" *ngIf="i.categoria.nome === e.categoria.nome" carouselSlide [id]="e.id">
+          <a class="slider-link" [owlRouterLink]="['/main/' + e.id]" [stopLink]="isDragging">
+            <img class="slider-image" [src]="e.imagem" [alt]="e.descricao" [title]="e.nome">
+            <div class="slider-info">
+              <h2>
+                {{e.nome}}
+              </h2>
+              <p>
+                {{e.categoria.nome}}
+              </p>
+            </div>
+          </a>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+</section>

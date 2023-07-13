@@ -4,14 +4,16 @@ import { FetchApiService } from 'src/app/services/fetch-api.service';
 import { IEventsByCategory } from 'src/app/interface/ievents-by-category';
 import { ICategory } from 'src/app/interface/i-category';
 import { IEvent } from 'src/app/interface/i-event';
-
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-carousel-categories-holder',
-  templateUrl: './carousel-categories-holder.component.html',
-  styleUrls: ['./carousel-categories-holder.component.scss']
+  selector: 'app-carousel-events-by-categories',
+  templateUrl: './carousel-events-by-categories.component.html',
+  styleUrls: ['./carousel-events-by-categories.component.scss']
 })
-export class CarouselCategoriesHolderComponent implements OnInit {
+export class CarouselEventsByCategoriesComponent implements OnInit {
+
+  public isDragging: boolean = false
 
   public fetchCategoryRes: ICategory[] = [];
   public fetchEventsRes: IEvent[] = [];
@@ -46,7 +48,10 @@ export class CarouselCategoriesHolderComponent implements OnInit {
   }
 
 
-  constructor(private fetchApiService: FetchApiService) { }
+  constructor(
+    private router: Router,
+    private fetchApiService: FetchApiService
+    ) { }
 
   ngOnInit(): void {
     this.catchEventos()
@@ -81,4 +86,7 @@ export class CarouselCategoriesHolderComponent implements OnInit {
     )
   }
 
+  public visitCategory(id: string) {
+    //this.router.navigate(``)
+  }
 }

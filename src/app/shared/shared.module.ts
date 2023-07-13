@@ -6,18 +6,21 @@ import { FontAwesome6Module } from '../components/font-awesome6/font-awesome6.mo
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { CarouselCategoriesHolderComponent } from './carousel-categories-holder/carousel-categories-holder.component';
 import { CarouselMainComponent } from './carousel-main/carousel-main.component';
+import { CarouselEventsByCategoriesComponent } from './carousel-events-by-categories/carousel-events-by-categories.component';
+import { CarouselCategoriesComponent } from './carousel-categories/carousel-categories.component';
 @NgModule({
   declarations: [
     MenuComponent,
-    CarouselCategoriesHolderComponent,
+    CarouselCategoriesComponent,
+    CarouselEventsByCategoriesComponent,
 
   ],
   exports: [
     MenuComponent,
     CarouselMainComponent,
-    CarouselCategoriesHolderComponent
+    CarouselCategoriesComponent,
+    CarouselEventsByCategoriesComponent,
   ],
   imports: [
     CarouselMainComponent,
