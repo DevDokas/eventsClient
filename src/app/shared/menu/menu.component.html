@@ -3,24 +3,26 @@
     <a routerLink="">
       <img [src]="icon" alt="">
     </a>
-    <ul>
-      <li>
-        <a routerLink="" [routerLinkActive]="['activated']" [routerLinkActiveOptions]="{exact:
-          true}"> Principal </a>
-      </li>
-      <li>
-        <a routerLink="/evento" [routerLinkActive]="['activated']"> Eventos </a>
-      </li>
-    </ul>
-    <div class="search-container">
-      <input type="text" placeholder="Digite a sua busca">
-      <button>
-        <fa-icon [icon]="['fas', 'magnifying-glass']"></fa-icon>
-      </button>
+    <div class="sub-container">
+      <ul>
+        <li>
+          <a routerLink="" [routerLinkActive]="['activated']" [routerLinkActiveOptions]="{exact:
+            true}"> Principal </a>
+        </li>
+        <li>
+          <a routerLink="/evento" [routerLinkActive]="['activated']"> Eventos </a>
+        </li>
+      </ul>
+  <!--     <div class="search-container">
+        <input type="text" placeholder="Digite a sua busca">
+        <button>
+          <fa-icon [icon]="['fas', 'magnifying-glass']"></fa-icon>
+        </button>
+      </div> -->
+      <a
+      routerLink="/admin/evento">
+        <fa-icon class="admin" [icon]="['fas', 'user']"></fa-icon>
+      </a>
     </div>
-    <a
-    routerLink="/admin/evento">
-      <fa-icon class="admin" [icon]="['fas', 'user']"></fa-icon>
-    </a>
   </nav>
 </header>

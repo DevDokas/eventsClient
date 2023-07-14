@@ -1,3 +1,11 @@
-<p>
-  {{fetchRes.nome}}
-</p>
+<section *ngFor="let c of fetchEventsByCategoyRes">
+  <div class="event-container" *ngIf="c.categoria.id == categoryId">
+    <div *ngFor="let e of c.eventos">
+      <img src="{{e.imagem}}" alt="">
+      <p>
+        {{e.nome}}
+      </p>
+    </div>
+  </div>
+</section>
+

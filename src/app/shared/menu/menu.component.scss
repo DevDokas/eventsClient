@@ -73,6 +73,12 @@ header {
         cursor: pointer;
       }
     }
+
+    .sub-container {
+      display: flex;
+      justify-content: space-between;
+      width: 65vw;
+    }
   }
 
   .admin {
