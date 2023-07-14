@@ -3,6 +3,7 @@ import { ICategory } from 'src/app/interface/i-category';
 import { FetchApiService } from 'src/app/services/fetch-api.service';
 import { ActivatedRoute } from '@angular/router';
 import { IEventsByCategory } from 'src/app/interface/ievents-by-category';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-category-detail-page',
@@ -18,6 +19,7 @@ export class CategoryDetailPageComponent implements OnInit {
 
   constructor(
     private fetchApiService: FetchApiService,
+    private router: Router,
     private activatedRoute: ActivatedRoute
   ) {
     this.activatedRoute.params.subscribe(
@@ -49,4 +51,7 @@ export class CategoryDetailPageComponent implements OnInit {
     )
   }
 
+  visitEventos(id: string) {
+    this.router.navigate([`/evento/${id}`])
+  }
 }

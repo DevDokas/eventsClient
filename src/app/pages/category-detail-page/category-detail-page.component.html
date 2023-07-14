@@ -1,11 +1,14 @@
-<section *ngFor="let c of fetchEventsByCategoyRes">
+<section class="container" *ngFor="let c of fetchEventsByCategoyRes">
   <div class="event-container" *ngIf="c.categoria.id == categoryId">
-    <div *ngFor="let e of c.eventos">
+    <h1>Eventos {{c.categoria.nome}}</h1>
+    <div class="event-card" *ngFor="let e of c.eventos" (click)="visitEventos(e.id)">
       <img src="{{e.imagem}}" alt="">
-      <p>
-        {{e.nome}}
-      </p>
+        <div class="card-info">
+          <h2>
+            {{e.nome}}
+          </h2>
+          <p>{{e.categoria.nome}}</p>
+        </div>
     </div>
   </div>
 </section>
-
