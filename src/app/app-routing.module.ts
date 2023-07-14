@@ -32,6 +32,11 @@ const routes: Routes = [
     path: "evento/:id",
     component: EventDetailPageComponent
   },
+/*   {
+    path: "categoria",
+    component: ,
+    title: "Categorias"
+  }, */
   {
     path: "categoria/:id",
     component: CategoryDetailPageComponent,
