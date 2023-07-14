@@ -8,6 +8,7 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
 import { EventDetailPageComponent } from './pages/event-detail-page/event-detail-page.component';
 import { CategoryPageComponent } from './pages/admin-page/category-page/category-page.component';
 import { CategoryDetailPageComponent } from './pages/category-detail-page/category-detail-page.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { AdminComponent } from './pages/admin-page/admin/admin.component';
 
 const routes: Routes = [
@@ -16,6 +17,11 @@ const routes: Routes = [
     pathMatch: "full",
     component: HomePageComponent,
     title: "+Eventos"
+  },
+  {
+    path: "sobre",
+    component: AboutPageComponent,
+    title: "Sobre"
   },
   {
     path: "evento",
@@ -43,7 +49,8 @@ const routes: Routes = [
   },
   {
     path: "**",
-    component: ErrorPageComponent
+    component: ErrorPageComponent,
+    title: "Error 404"
   }
 ];
 

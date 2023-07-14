@@ -29,10 +29,24 @@ section {
     .slider-info {
       h2 {
         font-size: 2.25vh;
+        transform: translate(0, 25%);
       }
 
       p {
         font-size: 1.75vh;
+        transform: translate(0, 25%);
+      }
+    }
+
+    .slider-image {
+      transform: scale(1.025);
+    }
+
+    .slider-info {
+      transform: scale(1.025);
+
+      h2 {
+        text-decoration: underline;
       }
     }
   }

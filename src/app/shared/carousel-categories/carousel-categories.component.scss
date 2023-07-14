@@ -22,6 +22,17 @@ section {
 .slider-link {
   color: #141414;
   text-decoration: none;
+
+  &:hover {
+    .slider-image {
+      transform: scale(1.025);
+    }
+
+    h2 {
+      margin-top: 0.5vh;
+      transform: scale(1.05);
+    }
+  }
 }
 
 .slider-image{
@@ -42,9 +53,5 @@ section {
 
   h2 {
     font-size: 2vh;
-  }
-
-  p {
-    font-size: 1.5vh;
   }
 }

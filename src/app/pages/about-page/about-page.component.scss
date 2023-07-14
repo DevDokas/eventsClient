@@ -1,0 +1,24 @@
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vh;
+  padding: 7vh 0 0 0;
+
+  .about-us-container {
+    width: 80%;
+    padding: 3vh 5vw;
+    border: 0;
+    border-radius: 1.5vh;
+    background-color: rgba(0,0,0,0.1);
+    text-align: justify;
+  }
+
+  .banner-container{
+    width: 100%;
+
+    img{
+      width: 100%;
+    }
+  }
+}
