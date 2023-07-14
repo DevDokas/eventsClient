@@ -1,2 +1,29 @@
-<p>{{fetchRes.nome}}</p>
-<p>{{fetchRes.descricao}}</p>
+<section>
+  <div class="image-container">
+    <img src="{{fetchRes.imagem}}" alt="{{fetchRes.nome}}">
+  </div>
+  <div class="main-container">
+    <div>
+      <h2>{{fetchRes.nome}}</h2>
+      <p>15/07/2023 - 08:00 - 18:00 GMT-3</p>
+      <p>Excellence Cursos - Nova Iguaçu - Rio de Janeiro - Brasil</p>
+    </div>
+    <button> Realizar Inscrição </button>
+  </div>
+  <div class="about-container">
+    <h2>Sobre o evento</h2>
+    <p>{{fetchRes.descricao}}</p>
+  </div>
+  <div class="registration-container">
+    <h2>Inscrições</h2>
+    <div class="card-container">
+      <div class="card-info-container">
+        <h3>Inscrição</h3>
+        <p>R$350,00</p>
+        <p>até 14/07/2023</p>
+      </div>
+      <p>Últimas vagas</p>
+    </div>
+    <button class="registration-button"> Realizar Inscrição - R$ 350,00</button>
+  </div>
+</section>
